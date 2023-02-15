@@ -1,9 +1,31 @@
-import { ContactForm, ContactList, Filter, Section } from '../components';
-import { AppStyled, Main } from './App.styled';
+import Alert from '@mui/material/Alert';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchContacts } from 'redux/operations';
+import { getError, getIsLoading } from 'redux/selectors';
+
+import {
+  ContactForm,
+  ContactList,
+  Filter,
+  Footer,
+  Loader,
+  Section,
+} from '../components';
+import { Main } from './App.styled';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const isLoading = useSelector(getIsLoading);
+  const error = useSelector(getError);
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   return (
-    <AppStyled>
+    <>
+      {error && <Alert severity="error">{error}</Alert>}
       <Main>
         <Section title="Phonebook">
           <ContactForm />
@@ -11,9 +33,11 @@ export const App = () => {
 
         <Section title="Contacts">
           <Filter />
+          {isLoading && <Loader />}
           <ContactList />
         </Section>
       </Main>
-    </AppStyled>
+      <Footer />
+    </>
   );
 };

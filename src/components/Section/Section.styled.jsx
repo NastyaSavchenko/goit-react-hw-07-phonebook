@@ -14,9 +14,15 @@ export const SectionTitle = styled.h2`
 export const SectionWrapper = styled.div`
   border: dotted 2px #6d1c03f5;
   border-radius: 6px;
-  background-color: #e5e2e3c0;
+  background-color: #f9f6f7cd;
   padding: 30px;
-  margin-bottom: 20px;
+
   align-items: center;
-  width: 100%;
+  text-align: center;
+
+  @media screen and (min-width: 750px) {
+    margin-bottom: 20px;
+    min-width: 300px;
+    width: 100%;
+  }
 `;

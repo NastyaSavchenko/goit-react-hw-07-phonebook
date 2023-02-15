@@ -9,6 +9,9 @@ export const ContactListItemsStyled = styled.li`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 
   font-family: 'Roboto';
   font-weight: 500;

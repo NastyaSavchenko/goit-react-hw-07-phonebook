@@ -5,13 +5,14 @@ export const FormTitle = styled.h3`
 
   font-family: 'Roboto';
   font-weight: 500;
-  font-size: 30px;
+  font-size: 20px;
 `;
 
 export const FormInput = styled.input`
   height: 30px;
   margin-bottom: 20px;
   padding: 2px 20px;
+  width: 100px;
 
   border: solid 2px #f3848c;
   border-radius: 6px;
@@ -28,25 +29,22 @@ export const FormInput = styled.input`
     border: solid 2px #3c322d;
   }
 
-  @media screen and (max-width: 750px) {
-    max-width: 100px;
-  }
-
-  @media screen and (min-width: 750.5px) {
-    max-width: 200px;
+  @media screen and (min-width: 750px) {
+    max-width: 250px;
+    width: 100%;
   }
 `;
 
 export const FormBtn = styled.button`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 40px;
   margin-left: auto;
   margin-right: auto;
   padding: 0px 5px;
   cursor: pointer;
-
+  width: 100px;
   border-radius: 6px;
   color: #ffffff;
   background: linear-gradient(
@@ -59,7 +57,7 @@ export const FormBtn = styled.button`
 
   font-family: 'Roboto';
   font-weight: 500;
-  font-size: 10px;
+  font-size: 15px;
 
   &:hover,
   &:focus {
@@ -67,5 +65,10 @@ export const FormBtn = styled.button`
     color: #f3848c;
     background: #ffffff;
     filter: drop-shadow(10px 15px 25px rgba(232, 183, 183, 0.45));
+  }
+
+  @media screen and (min-width: 750px) {
+    width: 250px;
+    font-size: 20px;
   }
 `;

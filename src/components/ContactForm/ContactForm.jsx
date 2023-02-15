@@ -1,8 +1,8 @@
-import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact, getContacts } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
+import { getContacts } from 'redux/selectors';
 
 import { FormBtn, FormInput, FormTitle } from './ContactForm.styled';
 
@@ -17,7 +17,6 @@ const ContactForm = () => {
     const inputNumber = e.currentTarget.number.value;
 
     const data = {
-      id: nanoid(),
       name: inputName,
       number: inputNumber,
     };
